@@ -2,8 +2,13 @@
 	"name": "simple-plist",
 	"author": "Joe Wollard",
 	"license": "MIT",
+	"homepage": "https://github.com/wollardj/node-simple-plist.git",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wollardj/node-simple-plist.git"
+	},
 	"version": "0.0.1",
-	"description": "A wrapper utility for interacting plist data.",
+	"description": "A wrapper utility for interacting with plist data.",
 	"main": "universal-plist.js",
 	"keywords": [
 		"plist",
