@@ -1,0 +1,19 @@
+{
+	"name": "simple-plist",
+	"author": "Joe Wollard",
+	"license": "MIT",
+	"version": "0.0.1",
+	"description": "A wrapper utility for interacting plist data.",
+	"main": "universal-plist.js",
+	"keywords": [
+		"plist",
+		"binary",
+		"bplist",
+		"xml"
+	],
+	"dependencies": {
+		"plist": "0.4.3",
+		"bplist-parser": "0.0.4",
+		"bplist-creator": "0.0.2"
+	}
+}
