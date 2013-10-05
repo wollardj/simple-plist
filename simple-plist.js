@@ -25,7 +25,7 @@ exports.readFileSync = function(aFile) {
 			results = plist.parseStringSync(contents.toString());
 		}
 		else if (firstByte === 98) {
-			results = bplistParser.parseBuffer(contents);
+			results = bplistParser.parseBuffer(contents)[0];
 		}
 		else {
 			console.error("Unable to determine format for '%s'", aFile);
