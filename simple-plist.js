@@ -22,7 +22,7 @@ exports.readFileSync = function(aFile) {
 
 	try {
 		if (firstByte === 60) {
-			results = plist.parseStringSync(contents.toString());
+			results = plist.parse(contents.toString());
 		}
 		else if (firstByte === 98) {
 			results = bplistParser.parseBuffer(contents)[0];
