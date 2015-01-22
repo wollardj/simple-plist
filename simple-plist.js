@@ -64,5 +64,5 @@ exports.stringify = function(anObject) {
 
 
 exports.parse = function(aString) {
-	return plist.parseStringSync(aString);
+	return plist.parse(aString);
 }
