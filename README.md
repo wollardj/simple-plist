@@ -5,13 +5,13 @@ A simple API for interacting with binary and plain text plist data.
 
 
 ## Installation
-```
-npm install simple-plist
+```sh
+$ npm install simple-plist
 ```
 
 
 ## Reading Data
-```
+```js
 var plist = require('simple-plist');
 
 // Read data from a file (xml or binary)
@@ -21,7 +21,7 @@ console.log( JSON.stringify(data) );
 
 
 ## Writing Data
-```
+```js
 var plist = require('simple-plist'),
 	data = plist.readFileSync('/path/to/some.plist');
 
@@ -34,7 +34,7 @@ plist.writeBinaryFileSync('/path/to/binary.plist', data);
 
 
 ## Mutating Plists In Memory
-```
+```js
 var plist = require('simple-plist');
 
 // Convert a Javascript object to a plist xml string
