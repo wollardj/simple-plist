@@ -11,31 +11,13 @@ exports.bplistParser = bplistParser;
 
 // Parses the given file and returns its contents as a native JavaScript object.
 exports.readFileSync = function(aFile) {
-	var results,
-		contents = fs.readFileSync(aFile),
-		firstByte = contents[0];
+	var contents = fs.readFileSync(aFile);
 
 	if (contents.length === 0) {
 		console.error("Unable to read file '%s'", aFile);
 		return {};
 	}
-
-	try {
-		if (firstByte === 60) {
-			results = plist.parse(contents.toString());
-		}
-		else if (firstByte === 98) {
-			results = bplistParser.parseBuffer(contents)[0];
-		}
-		else {
-			console.error("Unable to determine format for '%s'", aFile);
-			results = {};
-		}
-	}
-	catch(e) {
-		throw Error("'%s' has errors", aFile);
-	}
-	return results;
+	return exports.parse(contents, aFile);
 };
 
 
@@ -63,6 +45,28 @@ exports.stringify = function(anObject) {
 
 
 
-exports.parse = function(aString) {
-	return plist.parse(aString);
+exports.parse = function(aStringOrBuffer, aFile) {
+	var results,
+		firstByte = aStringOrBuffer[0];
+	try {
+		if (firstByte === 60 || firstByte === '<') {
+			results = plist.parse(aStringOrBuffer.toString());
+		}
+		else if (firstByte === 98) {
+			results = bplistParser.parseBuffer(aStringOrBuffer)[0];
+		}
+		else {
+			if (aFile != undefined) {
+				console.error("Unable to determine format for '%s'", aFile);
+			}
+			else {
+				console.error("Unable to determine format for plist aStringOrBuffer: '%s'", aStringOrBuffer);
+			}
+			results = {};
+		}
+	}
+	catch(e) {
+		throw Error("'%s' has errors", aFile);
+	}
+	return results;
 }
