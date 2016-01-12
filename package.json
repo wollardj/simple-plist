@@ -17,8 +17,8 @@
 		"xml"
 	],
 	"dependencies": {
-		"plist": "1.1.0",
-		"bplist-parser": "0.0.6",
-		"bplist-creator": "0.0.4"
+		"plist": "1.2.0",
+		"bplist-parser": "0.1.1",
+		"bplist-creator": "0.0.6"
 	}
 }
