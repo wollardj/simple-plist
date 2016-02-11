@@ -20,24 +20,55 @@ exports.readFileSync = function(aFile) {
 	return exports.parse(contents, aFile);
 };
 
+exports.readFile = function(aFile, callback) {
+	var results;
 
+	fs.readFile(aFile, function(err, contents){
+		if (err) {
+			callback(err);
+		}
+		else {
 
+			try {
+				results = exports.parse(contents, aFile);
+				callback(null,results);
+			}
+			catch(err) {
+				callback(err);
+			}
+
+		}
+	});
+}
 
 exports.writeFileSync = function(aFile, anObject, options) {
 	var data = plist.build(anObject);
 	fs.writeFileSync(aFile, data, options);
 };
 
-
-
+exports.writeFile = function(aFile, anObject, options, callback) {
+	if (arguments.length === 3 && typeof options === 'function') {
+		callback = options;
+		options = undefined;
+	}
+	var data = plist.build(anObject);
+	fs.writeFile(aFile, data, options, callback);
+};
 
 exports.writeBinaryFileSync = function(aFile, anObject, options) {
 	var data = bplistCreator(anObject);
 	fs.writeFileSync(aFile, data, options);
 };
 
+exports.writeBinaryFile = function(aFile, anObject, options, callback) {
+	if (arguments.length === 3 && typeof options === 'function') {
+		callback = options;
+		options = undefined;
+	}
 
-
+	var data = bplistCreator(anObject);
+	fs.writeFile(aFile, data, options, callback);
+};
 
 exports.stringify = function(anObject) {
 	return plist.build(anObject);

@@ -14,7 +14,13 @@ $ npm install simple-plist
 ```js
 var plist = require('simple-plist');
 
-// Read data from a file (xml or binary)
+// Read data from a file (xml or binary) (asynchronous)
+plist.readFile('/path/to/some.plist', function(err,data){
+	if (err) {throw err;}
+	console.log( JSON.stringify(data) );
+});
+
+// Read data from a file (xml or binary) (synchronous)
 var data = plist.readFileSync('/path/to/some.plist');
 console.log( JSON.stringify(data) );
 ```
@@ -25,10 +31,20 @@ console.log( JSON.stringify(data) );
 var plist = require('simple-plist'),
 	data = plist.readFileSync('/path/to/some.plist');
 
-// Write data to a xml file
+// Write data to a xml file (asynchronous)
+plist.writeFile('/path/to/plaintext.plist', data, function(err){
+	if (err) { throw err; }
+});
+
+// Write data to a xml file (synchronous)
 plist.writeFileSync('/path/to/plaintext.plist', data);
 
-// Write data to a binary plist file
+// Write data to a binary plist file (asynchronous)
+plist.writeBinaryFile('/path/to/binary.plist', data, function(err){
+	if (err) { throw err; }
+});
+
+// Write data to a binary plist file (synchronous)
 plist.writeBinaryFileSync('/path/to/binary.plist', data);
 ```
 
