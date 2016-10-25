@@ -87,16 +87,16 @@ exports.parse = function(aStringOrBuffer, aFile) {
     }
     else {
       if (aFile != undefined) {
-        console.error("Unable to determine format for '%s'", aFile);
+        throw new Error("Unable to determine format for '" + aFile + "'");
       }
       else {
-        console.error("Unable to determine format for plist aStringOrBuffer: '%s'", aStringOrBuffer);
+        throw new Error("Unable to determine format for plist aStringOrBuffer");
       }
       results = {};
     }
   }
   catch(e) {
-    throw Error("'%s' has errors", aFile);
+    throw new Error("'%s' has errors", aFile);
   }
   return results;
 }
