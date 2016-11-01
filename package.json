@@ -7,9 +7,12 @@
     "type": "git",
     "url": "https://github.com/wollardj/node-simple-plist.git"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A wrapper utility for interacting with plist data.",
   "main": "simple-plist.js",
+  "files": [
+    "simple-plist.js"
+  ],
   "keywords": [
     "plist",
     "binary",
@@ -18,7 +21,8 @@
   ],
   "scripts": {
     "test": "npm run-script clean && ./node_modules/.bin/coffee -c . && ./node_modules/.bin/jest --coverage",
-    "clean": "rm -rf *.js __tests__/*.js __tests__/write-test* coverage"
+    "clean": "rm -rf *.js __tests__/*.js __tests__/write-test* coverage",
+    "prepublish": "npm test"
   },
   "dependencies": {
     "bplist-creator": "0.0.7",
