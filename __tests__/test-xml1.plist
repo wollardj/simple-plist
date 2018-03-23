@@ -7,11 +7,13 @@
   <integer>1942</integer>
   <key>Name</key>
   <string>John Doe</string>
+  <key>Empty String</key>
+  <string></string>
   <key>Travel Log</key>
   <array>
     <string>Tokyo, Honshu, Japan</string>
     <string>Philadelphia, PA</string>
-		<string>Recife, Pernambuco, Brazil</string>
+    <string>Recife, Pernambuco, Brazil</string>
   </array>
   </dict>
 </plist>
