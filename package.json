@@ -20,9 +20,10 @@
     "xml"
   ],
   "scripts": {
-    "test": "npm run-script clean && ./node_modules/.bin/coffee -c . && ./node_modules/.bin/jest --coverage",
+    "build": "coffee -c .",
     "clean": "rm -rf *.js __tests__/*.js __tests__/write-test* coverage",
-    "prepublish": "npm test"
+    "prepublish": "npm run test",
+    "test": "npm run clean && npm run build && jest --coverage"
   },
   "dependencies": {
     "bplist-creator": "0.0.7",
