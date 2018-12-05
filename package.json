@@ -28,7 +28,7 @@
   "dependencies": {
     "bplist-creator": "0.0.7",
     "bplist-parser": "0.1.1",
-    "plist": "2.1.0"
+    "plist": "^3.0.1"
   },
   "devDependencies": {
     "coffee-script": "^1.11.1",
