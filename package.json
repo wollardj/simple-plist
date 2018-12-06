@@ -20,10 +20,22 @@
     "xml"
   ],
   "scripts": {
-    "build": "coffee -c .",
-    "clean": "rm -rf *.js __tests__/*.js __tests__/write-test* coverage",
-    "prepublish": "npm run test",
-    "test": "npm run clean && npm run build && jest --coverage"
+    "clean": "rimraf __tests__/write-test* coverage",
+    "jest": "jest --coverage",
+    "test": "run-s clean jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx run-s test",
+      "pre-push": "npx run-s test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "bplist-creator": "0.0.7",
@@ -32,6 +44,17 @@
   },
   "devDependencies": {
     "coffeescript": "^1.12.7",
-    "jest": "^23.6.0"
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.2.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.2"
   }
 }
