@@ -43,7 +43,6 @@
     "plist": "^3.0.1"
   },
   "devDependencies": {
-    "coffeescript": "^1.12.7",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
