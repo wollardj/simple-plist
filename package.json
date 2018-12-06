@@ -31,7 +31,7 @@
     "plist": "2.1.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.11.1",
-    "jest": "^16.0.2"
+    "coffeescript": "^1.12.7",
+    "jest": "^23.6.0"
   }
 }
