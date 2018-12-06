@@ -6,6 +6,7 @@ describe 'readFileSync can properly load and read a file', =>
   it "has the proper values", =>
     expect(contents.Name).toBe "John Doe"
     expect(contents['Birth Year']).toBe(1942)
+    expect(contents['Empty String']).toBe('')
     expect(contents['Travel Log']).toEqual(
       [
         'Tokyo, Honshu, Japan'
@@ -21,6 +22,7 @@ describe "readFile works asynchronously", =>
     contents = plist.readFile filePath, (err, contents)=>
       expect(contents.Name).toBe "John Doe"
       expect(contents['Birth Year']).toBe(1942)
+      expect(contents['Empty String']).toBe('')
       expect(contents['Travel Log']).toEqual(
         [
           'Tokyo, Honshu, Japan'
