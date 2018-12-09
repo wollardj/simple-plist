@@ -21,8 +21,10 @@
   ],
   "scripts": {
     "clean": "rimraf __tests__/write-test* coverage",
-    "jest": "jest --coverage",
-    "test": "run-s clean jest"
+    "jest": "jest --coverage ",
+    "jest:verbose": "jest --coverage --verbose",
+    "test": "run-s clean jest",
+    "test:verbose": "run-s clean jest:verbose"
   },
   "husky": {
     "hooks": {
