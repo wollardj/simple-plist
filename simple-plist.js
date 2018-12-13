@@ -46,15 +46,15 @@ function readFile(aFile, callback) {
 }
 
 function writeFileSync(aFile, anObject, options) {
-  const data = plist.build(anObject)
+  const data = stringify(anObject)
   return fs.writeFileSync(aFile, data, options)
 }
 
 function writeFile(aFile, anObject, options, callback) {
   if (arguments.length === 3 && typeof options === 'function') {
-    fs.writeFile(aFile, plist.build(anObject), options)
+    fs.writeFile(aFile, stringify(anObject), options)
   } else {
-    fs.writeFile(aFile, plist.build(anObject), options, callback)
+    fs.writeFile(aFile, stringify(anObject), options, callback)
   }
 }
 
@@ -71,7 +71,7 @@ function writeBinaryFile(aFile, anObject, options, callback) {
 }
 
 function stringify(anObject) {
-  return plist.build(anObject)
+  return plist.build(anObject) + '\n'
 }
 
 module.exports = {
