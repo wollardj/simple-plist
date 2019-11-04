@@ -17,7 +17,7 @@ function parse(aStringOrBuffer, aFile) {
       throw new Error('Unable to determine format for plist aStringOrBuffer')
     }
   } catch (error) {
-    throw new Error(`${aFile} has errors`)
+    throw new Error(error)
   }
   return results
 }
