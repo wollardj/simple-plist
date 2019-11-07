@@ -4,7 +4,7 @@ it('Throws an error on improperly formatted plist', () => {
   function doIt() {
     return plist.readFileSync(`${__dirname}/test-xml1-invalid.plist`)
   }
-  expect(doIt).toThrow(/has errors$/)
+  expect(doIt).toThrow()
 })
 
 it('returns an empty object when the file is zero bytes', () => {
