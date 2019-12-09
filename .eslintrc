@@ -7,5 +7,5 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["eslint-config-airbnb", "eslint-config-prettier"]
+  "extends": ["eslint-config-airbnb", "typescript", "typescript/prettier"]
 }

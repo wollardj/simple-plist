@@ -9,66 +9,67 @@ A simple API for interacting with binary and plain text plist data.
 ## Installation
 
 ```sh
-$ npm install simple-plist
+npm install simple-plist
 ```
 
 ## Reading Data
 
 ```js
-var plist = require('simple-plist')
+import { readFile } from "simple-plist";
 
-// Read data from a file (xml or binary) (asynchronous)
-plist.readFile('/path/to/some.plist', function(err, data) {
-  if (err) {
-    throw err
-  }
-  console.log(JSON.stringify(data))
-})
-
-// Read data from a file (xml or binary) (synchronous)
-var data = plist.readFileSync('/path/to/some.plist')
-console.log(JSON.stringify(data))
+async function myApp() {
+  const data = await readFile("/path/to/some.plist");
+  console.log(data);
+}
 ```
 
 ## Writing Data
 
 ```js
-var plist = require('simple-plist'),
-  data = plist.readFileSync('/path/to/some.plist')
+import { writeBinaryFile, writeFile } from "simple-plist";
 
-// Write data to a xml file (asynchronous)
-plist.writeFile('/path/to/plaintext.plist', data, function(err) {
-  if (err) {
-    throw err
-  }
-})
+async function myApp() {
+  // Write data to xml file
+  writeFile("/path/to/xml.plist", { foo: "bar" });
 
-// Write data to a xml file (synchronous)
-plist.writeFileSync('/path/to/plaintext.plist', data)
-
-// Write data to a binary plist file (asynchronous)
-plist.writeBinaryFile('/path/to/binary.plist', data, function(err) {
-  if (err) {
-    throw err
-  }
-})
-
-// Write data to a binary plist file (synchronous)
-plist.writeBinaryFileSync('/path/to/binary.plist', data)
+  // Write data to binary file
+  writeBinaryFile("/path/to/binary.plist", { foo: "bar" });
+}
 ```
 
 ## Mutating Plists In Memory
 
 ```js
-var plist = require('simple-plist')
+import { parse, stringify } from "simple-plist";
 
-// Convert a Javascript object to a plist xml string
-var xml = plist.stringify({ name: 'Joe', answer: 42 })
-console.log(xml) // output is a valid plist xml string
+async function myApp() {
+  // Convert a Javascript object to a plist xml string
+  const xml = stringify({ name: "Joe", answer: 42 });
 
-// Convert a plist xml string or a binary plist buffer to a Javascript object
-var data = plist.parse(
-  '<plist><dict><key>name</key><string>Joe</string></dict></plist>'
-)
-console.log(JSON.stringify(data))
+  // Convert a plist xml string or a binary plist buffer to a Javascript object
+  const data = await parse(
+    "<plist><dict><key>name</key><string>Joe</string></dict></plist>"
+  );
+}
+```
+
+## TypeScript Generics
+
+If you're using TypeScript, the `parse` and `readFile` functions both support
+generics so you don't lose type information. If no type is specified, the
+default of `PlistValue` will be used.
+
+```ts
+import { parse } from "simple-plist";
+
+interface MyDatabase {
+  name: string;
+  answer?: number;
+}
+
+async function myApp() {
+  return parse<MyDatabase>(
+    "<plist><dict><key>name</key><string>Joe</string></dict></plist>"
+  );
+}
 ```
