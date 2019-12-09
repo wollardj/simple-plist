@@ -1,5 +1,6 @@
 __tests__/write-test*
 package-lock.json
+dist
 
 # Created by https://www.gitignore.io/api/node,macos,linux,windows
 # Edit at https://www.gitignore.io/?templates=node,macos,linux,windows

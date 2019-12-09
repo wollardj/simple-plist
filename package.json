@@ -9,9 +9,10 @@
   },
   "version": "1.1.0",
   "description": "A wrapper utility for interacting with plist data.",
-  "main": "simple-plist.js",
+  "main": "dist/simple-plist.js",
+  "types": "dist/simple-plist.d.ts",
   "files": [
-    "simple-plist.js"
+    "dist/"
   ],
   "keywords": [
     "plist",
@@ -20,11 +21,14 @@
     "xml"
   ],
   "scripts": {
-    "clean": "rimraf __tests__/write-test* coverage",
-    "jest": "jest --coverage ",
+    "build:ts": "tsc",
+    "build": "run-s clean build:ts",
+    "clean": "rimraf dist __tests__/write-test* coverage",
     "jest:verbose": "jest --coverage --verbose",
-    "test": "run-s clean jest",
-    "test:verbose": "run-s clean jest:verbose"
+    "jest": "jest --coverage ",
+    "prepare": "run-s clean build:ts",
+    "test:verbose": "run-s clean jest:verbose",
+    "test": "run-s clean jest"
   },
   "husky": {
     "hooks": {
