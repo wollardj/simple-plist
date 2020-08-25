@@ -8,7 +8,7 @@ function parse(aStringOrBuffer, aFile) {
   const secondByte = aStringOrBuffer[1]
   let results
   try {
-    if (firstByte === 60 || firstByte === '<' || (firstByte === 10 && secondByte == 60)) {
+    if (firstByte === 60 || firstByte === '<' || (firstByte === 10 && secondByte === 60)) {
       results = plist.parse(aStringOrBuffer.toString())
     } else if (firstByte === 98) {
       ;[results] = bplistParser.parseBuffer(aStringOrBuffer)
