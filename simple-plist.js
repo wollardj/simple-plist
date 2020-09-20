@@ -32,16 +32,17 @@ function readFileSync(aFile) {
 
 function readFile(aFile, callback) {
   fs.readFile(aFile, (err, contents) => {
-    let results
     if (err) {
-      callback(err)
+      return callback(err)
     }
+    let results
     try {
       results = parse(contents, aFile)
-      callback(null, results)
     } catch (error) {
-      callback(error)
+      return callback(error)
     }
+    
+    callback(null, results)
   })
 }
 
