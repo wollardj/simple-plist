@@ -41,8 +41,8 @@ function readFile(aFile, callback) {
     } catch (error) {
       return callback(error)
     }
-    
-    callback(null, results)
+
+    return callback(null, results)
   })
 }
 
@@ -86,5 +86,5 @@ module.exports = {
   writeBinaryFile,
   writeBinaryFileSync,
   writeFile,
-  writeFileSync
+  writeFileSync,
 }
