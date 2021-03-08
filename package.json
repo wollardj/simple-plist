@@ -40,8 +40,8 @@
     ]
   },
   "dependencies": {
-    "bplist-creator": "0.0.8",
-    "bplist-parser": "0.2.0",
+    "bplist-creator": "0.1.0",
+    "bplist-parser": "0.3.0",
     "plist": "^3.0.1"
   },
   "devDependencies": {
