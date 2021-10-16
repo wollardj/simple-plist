@@ -1,78 +1,78 @@
-const bplistParser = require('bplist-parser')
-const bplistCreator = require('bplist-creator')
-const plist = require('plist')
-const fs = require('fs')
+const bplistParser = require("bplist-parser");
+const bplistCreator = require("bplist-creator");
+const plist = require("plist");
+const fs = require("fs");
 
 function parse(aStringOrBuffer, aFile) {
-  const firstByte = aStringOrBuffer[0]
-  let results
+  const firstByte = aStringOrBuffer[0];
+  let results;
   try {
-    if (firstByte === 60 || firstByte === '<') {
-      results = plist.parse(aStringOrBuffer.toString())
+    if (firstByte === 60 || firstByte === "<") {
+      results = plist.parse(aStringOrBuffer.toString());
     } else if (firstByte === 98) {
-      ;[results] = bplistParser.parseBuffer(aStringOrBuffer)
+      [results] = bplistParser.parseBuffer(aStringOrBuffer);
     } else if (aFile != null) {
-      throw new Error(`Unable to determine format for '${aFile}'`)
+      throw new Error(`Unable to determine format for '${aFile}'`);
     } else {
-      throw new Error('Unable to determine format for plist aStringOrBuffer')
+      throw new Error("Unable to determine format for plist aStringOrBuffer");
     }
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error);
   }
-  return results
+  return results;
 }
 
 function readFileSync(aFile) {
-  const contents = fs.readFileSync(aFile)
+  const contents = fs.readFileSync(aFile);
   if (contents.length === 0) {
-    return {}
+    return {};
   }
-  return parse(contents, aFile)
+  return parse(contents, aFile);
 }
 
 function readFile(aFile, callback) {
   fs.readFile(aFile, (err, contents) => {
     if (err) {
-      return callback(err)
+      return callback(err);
     }
-    let results
+    let results;
     try {
-      results = parse(contents, aFile)
+      results = parse(contents, aFile);
     } catch (error) {
-      return callback(error)
+      return callback(error);
     }
 
-    return callback(null, results)
-  })
+    return callback(null, results);
+  });
 }
 
 function writeFileSync(aFile, anObject, options) {
-  const data = plist.build(anObject)
-  return fs.writeFileSync(aFile, data, options)
+  const data = plist.build(anObject);
+  return fs.writeFileSync(aFile, data, options);
 }
 
 function writeFile(aFile, anObject, options, callback) {
-  if (arguments.length === 3 && typeof options === 'function') {
-    fs.writeFile(aFile, plist.build(anObject), options)
+  if (arguments.length === 3 && typeof options === "function") {
+    fs.writeFile(aFile, plist.build(anObject), options);
   } else {
-    fs.writeFile(aFile, plist.build(anObject), options, callback)
+    fs.writeFile(aFile, plist.build(anObject), options, callback);
   }
 }
 
 function writeBinaryFileSync(aFile, anObject, options) {
-  return fs.writeFileSync(aFile, bplistCreator(anObject), options)
+  return fs.writeFileSync(aFile, bplistCreator(anObject), options);
 }
 
 function writeBinaryFile(aFile, anObject, options, callback) {
-  if (arguments.length === 3 && typeof options === 'function') {
-    fs.writeFile(aFile, bplistCreator(anObject), options)
+  if (arguments.length === 3 && typeof options === "function") {
+    fs.writeFile(aFile, bplistCreator(anObject), options);
   } else {
-    fs.writeFile(aFile, bplistCreator(anObject), options, callback)
+    fs.writeFile(aFile, bplistCreator(anObject), options, callback);
   }
 }
 
 function stringify(anObject) {
-  return plist.build(anObject)
+  return plist.build(anObject);
 }
 
 module.exports = {
@@ -87,4 +87,4 @@ module.exports = {
   writeBinaryFileSync,
   writeFile,
   writeFileSync,
-}
+};
