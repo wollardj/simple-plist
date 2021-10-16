@@ -24,38 +24,30 @@
     "jest": "jest --coverage ",
     "jest:verbose": "jest --coverage --verbose",
     "test": "run-s clean jest",
-    "test:verbose": "run-s clean jest:verbose"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx run-s test",
-      "pre-push": "npx run-s test"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
+    "test:verbose": "run-s clean jest:verbose",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "bplist-creator": "0.0.8",
-    "bplist-parser": "0.2.0",
-    "plist": "^3.0.1"
+    "bplist-creator": "0.1.0",
+    "bplist-parser": "0.3.0",
+    "plist": "^3.0.4"
   },
   "devDependencies": {
-    "eslint": "^7.10.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.21.2",
-    "husky": "^4.3.0",
-    "jest": "^26.4.2",
-    "lint-staged": "^10.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": ">=6",
+    "jest": "^27.2.5",
+    "lint-staged": ">=10",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.2",
+    "prettier": "^2.4.1",
     "rimraf": "^3.0.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
