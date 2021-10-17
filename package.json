@@ -9,10 +9,11 @@
   },
   "version": "1.1.1",
   "description": "A wrapper utility for interacting with plist data.",
-  "main": "simple-plist.js",
+  "main": "dist/index",
   "files": [
-    "simple-plist.js"
+    "./dist"
   ],
+  "types": "./dist/index.d.ts",
   "keywords": [
     "plist",
     "binary",
@@ -20,10 +21,13 @@
     "xml"
   ],
   "scripts": {
+    "build:tsc": "tsc --project ./tsconfig-build.json",
+    "build": "run-s clean:build build:tsc",
+    "clean:build": "rimraf dist",
     "clean": "rimraf __tests__/write-test* coverage",
+    "prepare": "husky install",
     "pretest": "clean",
-    "test": "jest --coverage --verbose",
-    "prepare": "husky install"
+    "test": "jest --coverage --verbose"
   },
   "dependencies": {
     "bplist-creator": "0.1.0",
@@ -35,6 +39,7 @@
     "@types/node": "^16.11.0",
     "@types/plist": "^3.0.2",
     "husky": ">=6",
+    "jest": "^27.2.5",
     "lint-staged": ">=10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
