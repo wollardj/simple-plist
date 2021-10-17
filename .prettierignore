@@ -1,6 +1,0 @@
-__tests__
-.husky
-.pnp.cjs
-.yarn
-coverage
-yarn.lock
