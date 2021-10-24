@@ -2,9 +2,9 @@
 
 [![npm](https://img.shields.io/npm/dw/simple-plist.svg?style=popout&logo=npm)](https://www.npmjs.org/package/simple-plist)
 [![npm](https://img.shields.io/npm/v/simple-plist.svg?style=popout&logo=npm)](https://www.npmjs.com/package/simple-plist)
-[![Travis (.com) branch](https://img.shields.io/travis/com/wollardj/node-simple-plist/develop.svg?style=popout&logo=Travis%20CI)](https://travis-ci.com/wollardj/node-simple-plist)
 
-A simple API for interacting with binary and plain text plist data.
+A simple API for interacting with binary and plain text
+[plist](https://en.wikipedia.org/wiki/Property_list) data.
 
 ## Installation
 
@@ -16,63 +16,115 @@ npm install simple-plist
 yarn add simple-plist
 ```
 
-## Reading Data
+## Synchronous API
 
 ```js
-var plist = require("simple-plist");
+const plist = require("simple-plist");
 
-// Read data from a file (xml or binary) (asynchronous)
-plist.readFile("/path/to/some.plist", function (err, data) {
-  if (err) {
-    throw err;
-  }
-  console.log(JSON.stringify(data));
-});
+let data;
 
-// Read data from a file (xml or binary) (synchronous)
-var data = plist.readFileSync("/path/to/some.plist");
-console.log(JSON.stringify(data));
-```
+// read
+data = plist.readFileSync("/path/to/some.plist");
 
-## Writing Data
-
-```js
-var plist = require("simple-plist"),
-  data = plist.readFileSync("/path/to/some.plist");
-
-// Write data to a xml file (asynchronous)
-plist.writeFile("/path/to/plaintext.plist", data, function (err) {
-  if (err) {
-    throw err;
-  }
-});
-
-// Write data to a xml file (synchronous)
+// write xml
 plist.writeFileSync("/path/to/plaintext.plist", data);
 
-// Write data to a binary plist file (asynchronous)
-plist.writeBinaryFile("/path/to/binary.plist", data, function (err) {
-  if (err) {
-    throw err;
-  }
-});
-
-// Write data to a binary plist file (synchronous)
+// write binary
 plist.writeBinaryFileSync("/path/to/binary.plist", data);
 ```
 
-## Mutating Plists In Memory
+## Asynchronous API
+
+> Note: all of the async examples can optionally be converted to promises using
+> node's [`util.promisify`](https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original).
 
 ```js
-var plist = require("simple-plist");
+const plist = require("simple-plist");
 
-// Convert a Javascript object to a plist xml string
-var xml = plist.stringify({ name: "Joe", answer: 42 });
-console.log(xml); // output is a valid plist xml string
+let data;
 
-// Convert a plist xml string or a binary plist buffer to a Javascript object
-var data = plist.parse(
-  "<plist><dict><key>name</key><string>Joe</string></dict></plist>"
-);
-console.log(JSON.stringify(data));
+function callback(err, contents) {
+  if (err) throw err;
+  data = contents;
+}
+
+// read
+plist.readFile("/path/to/some.plist", callback);
+
+// write xml
+plist.writeFile("/path/to/plaintext.plist", data, callback);
+
+// write binary
+plist.writeBinaryFile("/path/to/binary.plist", data, callback);
+```
+
+## In Memory
+
+### `plist.stringify()`
+
+```js
+const plist = require("simple-plist");
+
+// Convert an object to a plist xml string
+plist.stringify({ name: "Joe", answer: 42 });
+
+/*
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>name</key>
+    <string>Joe</string>
+    <key>answer</key>
+    <integer>42</integer>
+  </dict>
+</plist>
+*/
+```
+
+### `plist.parse()`
+
+```js
+const plist = require("simple-plist");
+
+const xml = `<plist>
+	<dict>
+		<key>name</key>
+		<string>Joe</string>
+	</dict>
+</plist>`;
+
+plist.parse(xml);
+// { "name": "Joe" }
+```
+
+## TypeScript Support
+
+All functions have typescript signatures, but there are a few handy generics
+that are worth pointing out. Those generics belong to `parse`, `readFile`,
+and `readFileSync`. Here's an example:
+
+```tsx
+import { parse, readFile, readFileSync } from "simple-plist";
+
+type Profile = {
+  name: string;
+  answer: number;
+};
+
+const xml = `<plist>
+	<dict>
+		<key>name</key>
+		<string>Joe</string>
+		<key>answer</key>
+		<integer>42</integer>
+	</dict>
+</plist>`;
+
+// typed string parsing
+const { answer } = parse<Profile>(xml);
+// answer = 42;
+
+// typed file loading
+const { name } = readFileSync<Profile>("/path/to/profile.plist");
 ```

@@ -8,9 +8,20 @@ import { writeBinaryFile } from "./writeBinaryFile";
 import { writeBinaryFileSync } from "./writeBinaryFileSync";
 import { writeFile } from "./writeFile";
 import { writeFileSync } from "./writeFileSync";
-export type { PlistJsObj, StringOrBuffer, callbackFn } from "./types";
 
-export default {
+// "modern" named exports
+export { parse } from "./parse";
+export { readFile } from "./readFile";
+export { readFileSync } from "./readFileSync";
+export { stringify } from "./stringify";
+export type { callbackFn, PlistJsObj, StringOrBuffer } from "./types";
+export { writeBinaryFile } from "./writeBinaryFile";
+export { writeBinaryFileSync } from "./writeBinaryFileSync";
+export { writeFile } from "./writeFile";
+export { writeFileSync } from "./writeFileSync";
+
+// preserve backwards compatibility
+module.exports = {
   bplistCreator,
   bplistParser,
   parse,
