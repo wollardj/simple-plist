@@ -3766,13 +3766,13 @@ fsevents@^2.3.2:
   languageName: node
   linkType: hard
 
-"plist@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "plist@npm:3.0.4"
+"plist@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "plist@npm:3.0.5"
   dependencies:
     base64-js: ^1.5.1
     xmlbuilder: ^9.0.7
-  checksum: cb5883ed1b1aa227ddc5f99003750d312a8ac5cfd6f58d3ce0b24939255b175b54f25ebc6adcbd4266105ffd54f6831acb6cb06f529652bb3344215c10f5601b
+  checksum: f8b82816f66559965a4dabf139bd8dd95cdec7e51f32742bb353af276ea8228b9807113743b860eda3e867f6ed70d2bcbc1e135b3204d92b5c37ac765f68444e
   languageName: node
   linkType: hard
 
@@ -4108,7 +4108,7 @@ fsevents@^2.3.2:
     jest: ^27.3.1
     lint-staged: ^11.2.4
     npm-run-all: ^4.1.5
-    plist: ^3.0.4
+    plist: ^3.0.5
     prettier: ^2.4.1
     rimraf: ^3.0.2
     ts-jest: ^27.0.7

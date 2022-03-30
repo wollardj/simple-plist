@@ -44,7 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.3.1"],
             ["lint-staged", "npm:11.2.4"],
             ["npm-run-all", "npm:4.1.5"],
-            ["plist", "npm:3.0.4"],
+            ["plist", "npm:3.0.5"],
             ["prettier", "npm:2.4.1"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.0.7"],
@@ -4709,10 +4709,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["plist", [
-        ["npm:3.0.4", {
-          "packageLocation": "./.yarn/cache/plist-npm-3.0.4-3d99846fa8-cb5883ed1b.zip/node_modules/plist/",
+        ["npm:3.0.5", {
+          "packageLocation": "./.yarn/cache/plist-npm-3.0.5-7ac7035402-f8b82816f6.zip/node_modules/plist/",
           "packageDependencies": [
-            ["plist", "npm:3.0.4"],
+            ["plist", "npm:3.0.5"],
             ["base64-js", "npm:1.5.1"],
             ["xmlbuilder", "npm:9.0.7"]
           ],
@@ -5092,7 +5092,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.3.1"],
             ["lint-staged", "npm:11.2.4"],
             ["npm-run-all", "npm:4.1.5"],
-            ["plist", "npm:3.0.4"],
+            ["plist", "npm:3.0.5"],
             ["prettier", "npm:2.4.1"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.0.7"],
