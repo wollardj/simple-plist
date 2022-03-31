@@ -39,7 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.11.4"],
             ["@types/plist", "npm:3.0.2"],
             ["bplist-creator", "npm:0.1.0"],
-            ["bplist-parser", "npm:0.3.0"],
+            ["bplist-parser", "npm:0.3.1"],
             ["husky", "npm:7.0.4"],
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.3.1"],
             ["lint-staged", "npm:11.2.4"],
@@ -1676,10 +1676,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["bplist-parser", [
-        ["npm:0.3.0", {
-          "packageLocation": "./.yarn/cache/bplist-parser-npm-0.3.0-e49200b1f4-f1c49e4850.zip/node_modules/bplist-parser/",
+        ["npm:0.3.1", {
+          "packageLocation": "./.yarn/cache/bplist-parser-npm-0.3.1-2ca33ea639-7cabc5bead.zip/node_modules/bplist-parser/",
           "packageDependencies": [
-            ["bplist-parser", "npm:0.3.0"],
+            ["bplist-parser", "npm:0.3.1"],
             ["big-integer", "npm:1.6.50"]
           ],
           "linkType": "HARD",
@@ -5087,7 +5087,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.11.4"],
             ["@types/plist", "npm:3.0.2"],
             ["bplist-creator", "npm:0.1.0"],
-            ["bplist-parser", "npm:0.3.0"],
+            ["bplist-parser", "npm:0.3.1"],
             ["husky", "npm:7.0.4"],
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.3.1"],
             ["lint-staged", "npm:11.2.4"],
