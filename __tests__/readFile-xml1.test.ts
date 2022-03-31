@@ -1,13 +1,9 @@
 import plist from "../src/index";
+import { DemoFile } from "./utils/types";
 
 const filePath = `${__dirname}/test-xml1.plist`;
 
-type TestXml1 = {
-  "Birth Year": number;
-  Name: string;
-  "Empty String": string;
-  "Travel Log": string[];
-};
+type TestXml1 = DemoFile & { "Empty String": string };
 
 describe("readFileSync can properly load and read a file", () => {
   const contents = plist.readFileSync<TestXml1>(filePath);
@@ -15,14 +11,18 @@ describe("readFileSync can properly load and read a file", () => {
     if (!contents["Name"]) {
       fail(`Failed to parse ${filePath}`);
     }
-    expect(contents.Name).toBe("John Doe");
-    expect(contents["Birth Year"]).toBe(1942);
-    expect(contents["Empty String"]).toBe("");
-    expect(contents["Travel Log"]).toEqual([
-      "Tokyo, Honshu, Japan",
-      "Philadelphia, PA",
-      "Recife, Pernambuco, Brazil",
-    ]);
+    expect(contents).toMatchInlineSnapshot(`
+      Object {
+        "Birth Year": 1942,
+        "Empty String": "",
+        "Name": "John Doe",
+        "Travel Log": Array [
+          "Tokyo, Honshu, Japan",
+          "Philadelphia, PA",
+          "Recife, Pernambuco, Brazil",
+        ],
+      }
+    `);
   });
 });
 
@@ -32,14 +32,18 @@ describe("readFile works asynchronously", () => {
       if (!contents) {
         fail(`Failed to parse ${filePath}`);
       }
-      expect(contents.Name).toBe("John Doe");
-      expect(contents["Birth Year"]).toBe(1942);
-      expect(contents["Empty String"]).toBe("");
-      expect(contents["Travel Log"]).toEqual([
-        "Tokyo, Honshu, Japan",
-        "Philadelphia, PA",
-        "Recife, Pernambuco, Brazil",
-      ]);
+      expect(contents).toMatchInlineSnapshot(`
+        Object {
+          "Birth Year": 1942,
+          "Empty String": "",
+          "Name": "John Doe",
+          "Travel Log": Array [
+            "Tokyo, Honshu, Japan",
+            "Philadelphia, PA",
+            "Recife, Pernambuco, Brazil",
+          ],
+        }
+      `);
       done();
     });
   });
