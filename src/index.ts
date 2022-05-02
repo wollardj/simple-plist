@@ -1,5 +1,5 @@
 import bplistCreator from "bplist-creator";
-import bplistParser from "bplist-parser";
+import * as bplistParser from "bplist-parser";
 import { parse } from "./parse";
 import { readFile } from "./readFile";
 import { readFileSync } from "./readFileSync";

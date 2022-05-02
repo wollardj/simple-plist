@@ -1,4 +1,4 @@
-import bplistParser from "bplist-parser";
+import * as bplistParser from "bplist-parser";
 import { PathOrFileDescriptor } from "fs";
 import plist from "plist";
 import { PlistJsObj, StringOrBuffer } from "./types";
