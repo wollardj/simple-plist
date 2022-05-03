@@ -38,8 +38,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:27.4.1"],
             ["@types/node", "npm:16.11.26"],
             ["@types/plist", "npm:3.0.2"],
-            ["bplist-creator", "npm:0.1.0"],
-            ["bplist-parser", "npm:0.3.1"],
+            ["bplist-creator", "npm:0.1.1"],
+            ["bplist-parser", "npm:0.3.2"],
             ["husky", "npm:7.0.4"],
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.5.1"],
             ["lint-staged", "npm:11.2.6"],
@@ -1950,20 +1950,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["bplist-creator", [
-        ["npm:0.1.0", {
-          "packageLocation": "./.yarn/cache/bplist-creator-npm-0.1.0-f194332b98-d4ccd88ea1.zip/node_modules/bplist-creator/",
+        ["npm:0.1.1", {
+          "packageLocation": "./.yarn/cache/bplist-creator-npm-0.1.1-46ec2e397c-b0d40d1d16.zip/node_modules/bplist-creator/",
           "packageDependencies": [
-            ["bplist-creator", "npm:0.1.0"],
+            ["bplist-creator", "npm:0.1.1"],
             ["stream-buffers", "npm:2.2.0"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["bplist-parser", [
-        ["npm:0.3.1", {
-          "packageLocation": "./.yarn/cache/bplist-parser-npm-0.3.1-2ca33ea639-7cabc5bead.zip/node_modules/bplist-parser/",
+        ["npm:0.3.2", {
+          "packageLocation": "./.yarn/cache/bplist-parser-npm-0.3.2-94c89d7427-fad0f6eb15.zip/node_modules/bplist-parser/",
           "packageDependencies": [
-            ["bplist-parser", "npm:0.3.1"],
+            ["bplist-parser", "npm:0.3.2"],
             ["big-integer", "npm:1.6.50"]
           ],
           "linkType": "HARD",
@@ -5477,8 +5477,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:27.4.1"],
             ["@types/node", "npm:16.11.26"],
             ["@types/plist", "npm:3.0.2"],
-            ["bplist-creator", "npm:0.1.0"],
-            ["bplist-parser", "npm:0.3.1"],
+            ["bplist-creator", "npm:0.1.1"],
+            ["bplist-parser", "npm:0.3.2"],
             ["husky", "npm:7.0.4"],
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:27.5.1"],
             ["lint-staged", "npm:11.2.6"],
