@@ -19,7 +19,7 @@ yarn add simple-plist
 ## Synchronous API
 
 ```js
-const plist = require("simple-plist");
+import * as plist from "simple-plist";
 
 let data;
 
@@ -39,7 +39,7 @@ plist.writeBinaryFileSync("/path/to/binary.plist", data);
 > node's [`util.promisify`](https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original).
 
 ```js
-const plist = require("simple-plist");
+import * as plist from "simple-plist";
 
 let data;
 
@@ -85,7 +85,7 @@ plist.stringify({ name: "Joe", answer: 42 });
 ### `plist.parse()`
 
 ```js
-const plist = require("simple-plist");
+import * as plist from "simple-plist";
 
 const xml = `<plist>
 	<dict>
