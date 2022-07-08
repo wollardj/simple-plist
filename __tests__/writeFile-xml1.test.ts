@@ -1,4 +1,4 @@
-import plist from "../src/index";
+import * as plist from "../src";
 
 const filePath = `${__dirname}/write-test-xml1.plist`;
 const testObj = {

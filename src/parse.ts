@@ -1,7 +1,7 @@
 import bplistParser from "bplist-parser";
 import { PathOrFileDescriptor } from "fs";
 import plist from "plist";
-import { PlistJsObj, StringOrBuffer } from "./types";
+import type { PlistJsObj, StringOrBuffer } from "./types";
 
 /**
  * Detects the format of the given string or buffer, then attempts to parse the

@@ -1,4 +1,4 @@
-import plist from "../src/index";
+import * as plist from "../src";
 
 it("Throws an error on improperly formatted plist", () => {
   const doIt = () => plist.readFileSync(`${__dirname}/test-xml1-invalid.plist`);

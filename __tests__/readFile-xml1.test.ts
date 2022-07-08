@@ -1,4 +1,4 @@
-import plist from "../src/index";
+import * as plist from "../src";
 import { DemoFile } from "./utils/types";
 
 const filePath = `${__dirname}/test-xml1.plist`;

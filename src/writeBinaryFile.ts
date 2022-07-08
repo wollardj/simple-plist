@@ -1,6 +1,6 @@
 import bplistCreator from "bplist-creator";
 import fs, { PathOrFileDescriptor, WriteFileOptions } from "fs";
-import { callbackFn, PlistJsObj } from "./types";
+import type { callbackFn, PlistJsObj } from "./types";
 
 export function writeBinaryFile(
   aFile: PathOrFileDescriptor,

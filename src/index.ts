@@ -1,30 +1,12 @@
-import bplistCreator from "bplist-creator";
-import bplistParser from "bplist-parser";
-import { parse } from "./parse";
-import { readFile } from "./readFile";
-import { readFileSync } from "./readFileSync";
-import { stringify } from "./stringify";
-import { writeBinaryFile } from "./writeBinaryFile";
-import { writeBinaryFileSync } from "./writeBinaryFileSync";
-import { writeFile } from "./writeFile";
-import { writeFileSync } from "./writeFileSync";
+export { default as bplistCreator } from "bplist-creator";
+export { default as bplistParser } from "bplist-parser";
+export { parse } from "./parse";
+export { readFile } from "./readFile";
+export { readFileSync } from "./readFileSync";
+export { stringify } from "./stringify";
+export { writeBinaryFile } from "./writeBinaryFile";
+export { writeBinaryFileSync } from "./writeBinaryFileSync";
+export { writeFile } from "./writeFile";
+export { writeFileSync } from "./writeFileSync";
 
-// "modern" named exports
-const SimplePlist = {
-  bplistCreator,
-  bplistParser,
-  parse,
-  readFile,
-  readFileSync,
-  stringify,
-  writeBinaryFile,
-  writeBinaryFileSync,
-  writeFile,
-  writeFileSync,
-};
-
-export default SimplePlist;
 export type { callbackFn, PlistJsObj, StringOrBuffer } from "./types";
-
-// preserve backwards compatibility
-module.exports = SimplePlist;

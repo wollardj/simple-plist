@@ -1,6 +1,6 @@
 import fs, { PathOrFileDescriptor, WriteFileOptions } from "fs";
 import plist from "plist";
-import { PlistJsObj } from "./types";
+import type { PlistJsObj } from "./types";
 
 export function writeFileSync(
   aFile: PathOrFileDescriptor,

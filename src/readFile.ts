@@ -1,6 +1,6 @@
 import fs, { PathOrFileDescriptor } from "fs";
 import { parse } from "./parse";
-import { callbackFn } from "./types";
+import type { callbackFn } from "./types";
 
 export function readFile<T = unknown>(
   aFile: PathOrFileDescriptor,
