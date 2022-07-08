@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@types/jest", "npm:28.1.4"],
-            ["@types/node", "npm:16.11.26"],
+            ["@types/node", "npm:16.11.43"],
             ["@types/plist", "npm:3.0.2"],
             ["bplist-creator", "npm:0.1.1"],
             ["bplist-parser", "npm:0.3.2"],
@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:11.2.6"],
             ["npm-run-all", "npm:4.1.5"],
             ["plist", "npm:3.0.5"],
-            ["prettier", "npm:2.6.1"],
+            ["prettier", "npm:2.7.1"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:28.0.5"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b"]
@@ -1581,17 +1581,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node", [
-        ["npm:16.11.26", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.26-6163d95b7d-57757caaba.zip/node_modules/@types/node/",
-          "packageDependencies": [
-            ["@types/node", "npm:16.11.26"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:16.11.4", {
           "packageLocation": "./.yarn/cache/@types-node-npm-16.11.4-f4c998d94a-96e08c0f8b.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:16.11.4"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:16.11.43", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.43-d0740e29f9-96d09e6834.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:16.11.43"]
           ],
           "linkType": "HARD",
         }]
@@ -4787,10 +4787,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["prettier", [
-        ["npm:2.6.1", {
-          "packageLocation": "./.yarn/cache/prettier-npm-2.6.1-94a3731152-78be1f8a3d.zip/node_modules/prettier/",
+        ["npm:2.7.1", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.7.1-d1f40f5e1a-55a4409182.zip/node_modules/prettier/",
           "packageDependencies": [
-            ["prettier", "npm:2.6.1"]
+            ["prettier", "npm:2.7.1"]
           ],
           "linkType": "HARD",
         }]
@@ -5128,7 +5128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["simple-plist", "workspace:."],
             ["@types/jest", "npm:28.1.4"],
-            ["@types/node", "npm:16.11.26"],
+            ["@types/node", "npm:16.11.43"],
             ["@types/plist", "npm:3.0.2"],
             ["bplist-creator", "npm:0.1.1"],
             ["bplist-parser", "npm:0.3.2"],
@@ -5137,7 +5137,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:11.2.6"],
             ["npm-run-all", "npm:4.1.5"],
             ["plist", "npm:3.0.5"],
-            ["prettier", "npm:2.6.1"],
+            ["prettier", "npm:2.7.1"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:28.0.5"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b"]
