@@ -1,18 +1,19 @@
 import bplistParser from "bplist-parser";
 import { PathOrFileDescriptor } from "fs";
+import type { PlistValue } from "plist";
 import plist from "plist";
-import type { PlistJsObj, StringOrBuffer } from "./types";
+import type { StringOrBuffer } from "./types";
 
 /**
  * Detects the format of the given string or buffer, then attempts to parse the
  * payload using the appropriate tooling.
  */
-export function parse<T = PlistJsObj>(
+export function parse<T = PlistValue>(
   aStringOrBuffer: StringOrBuffer,
   aFile?: PathOrFileDescriptor
 ): T {
   const firstByte = aStringOrBuffer[0];
-  let results;
+  let results: T | PlistValue;
   try {
     if (firstByte === 60 || firstByte === "<") {
       results = plist.parse(aStringOrBuffer.toString());
