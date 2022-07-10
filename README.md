@@ -8,12 +8,23 @@ A simple API for interacting with binary and plain text
 
 ## Installation
 
+### Package managers
+
 ```sh
 # via npm
 npm install simple-plist
 
 # via yarn
 yarn add simple-plist
+```
+
+### Deno
+
+Starting with version 1.4.0, you can also import `simple-plist` into your
+[deno](https://deno.land) applications through esm.sh.
+
+```typescript
+import plist from "https://esm.sh/simple-plist@1.4.0";
 ```
 
 ## Synchronous API
