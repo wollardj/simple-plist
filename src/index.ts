@@ -1,5 +1,8 @@
-export { default as bplistCreator } from "bplist-creator";
-export { default as bplistParser } from "bplist-parser";
+import * as bplistCreator from "bplist-creator";
+import * as bplistParser from "bplist-parser";
+
+export { bplistCreator }
+export { bplistParser }
 export { parse } from "./parse";
 export { readFile } from "./readFile";
 export { readFileSync } from "./readFileSync";
