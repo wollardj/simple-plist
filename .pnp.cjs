@@ -122,7 +122,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["convert-source-map", "npm:1.8.0"],
             ["debug", "virtual:ab4298b064d6d9ecd7fe3144411b92738a78b3a31c900beadb704a0521a214be5ef615a1cd1df12822278b0da742f268ed27c0ff2574b12eb9acd1cd4b2ec728#npm:4.3.2"],
             ["gensync", "npm:1.0.0-beta.2"],
-            ["json5", "npm:2.2.0"],
+            ["json5", "npm:2.2.3"],
             ["semver", "npm:6.3.0"],
             ["source-map", "npm:0.5.7"]
           ],
@@ -145,7 +145,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["convert-source-map", "npm:1.8.0"],
             ["debug", "virtual:ab4298b064d6d9ecd7fe3144411b92738a78b3a31c900beadb704a0521a214be5ef615a1cd1df12822278b0da742f268ed27c0ff2574b12eb9acd1cd4b2ec728#npm:4.3.2"],
             ["gensync", "npm:1.0.0-beta.2"],
-            ["json5", "npm:2.2.1"],
+            ["json5", "npm:2.2.3"],
             ["semver", "npm:6.3.0"]
           ],
           "linkType": "HARD",
@@ -4006,18 +4006,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["json5", [
-        ["npm:2.2.0", {
-          "packageLocation": "./.yarn/cache/json5-npm-2.2.0-da49dc7cb5-e88fc5274b.zip/node_modules/json5/",
+        ["npm:2.2.3", {
+          "packageLocation": "./.yarn/cache/json5-npm-2.2.3-9962c55073-2a7436a933.zip/node_modules/json5/",
           "packageDependencies": [
-            ["json5", "npm:2.2.0"],
-            ["minimist", "npm:1.2.5"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:2.2.1", {
-          "packageLocation": "./.yarn/cache/json5-npm-2.2.1-44675c859c-74b8a23b10.zip/node_modules/json5/",
-          "packageDependencies": [
-            ["json5", "npm:2.2.1"]
+            ["json5", "npm:2.2.3"]
           ],
           "linkType": "HARD",
         }]
@@ -4254,15 +4246,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["minimatch", "npm:3.0.4"],
             ["brace-expansion", "npm:1.1.11"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["minimist", [
-        ["npm:1.2.5", {
-          "packageLocation": "./.yarn/cache/minimist-npm-1.2.5-ced0e1f617-86706ce5b3.zip/node_modules/minimist/",
-          "packageDependencies": [
-            ["minimist", "npm:1.2.5"]
           ],
           "linkType": "HARD",
         }]
@@ -5616,7 +5599,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fast-json-stable-stringify", "npm:2.1.0"],
             ["jest", "virtual:020fc7d94c59e3a3a9c7c102561baf39436220930bc71ae4b32b5080fe8189c54e6fb420af79d5d61c73eef83c6f1a6f5302cc6f1ef959b964e8f0dd7c434720#npm:28.1.2"],
             ["jest-util", "npm:28.1.1"],
-            ["json5", "npm:2.2.1"],
+            ["json5", "npm:2.2.3"],
             ["lodash.memoize", "npm:4.1.2"],
             ["make-error", "npm:1.3.6"],
             ["semver", "npm:7.3.5"],
